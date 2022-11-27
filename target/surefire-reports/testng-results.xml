@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-27T09:20:39 MSK" name="hardcore" finished-at="2022-11-27T09:22:02 MSK" duration-ms="82647">
+    <groups>
+    </groups>
+    <test started-at="2022-11-27T09:20:39 MSK" name="basic scenario" finished-at="2022-11-27T09:22:02 MSK" duration-ms="82647">
+      <class name="com.epam.test.GoogleCloudBothScenariosTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:20:39 MSK" name="setUp" finished-at="2022-11-27T09:20:46 MSK" duration-ms="7132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="createCalculationScenario()[pri:0, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:20:46 MSK" name="createCalculationScenario" description="opens cloud calculator page, fills the from with data from properties file and estimates price" finished-at="2022-11-27T09:21:44 MSK" duration-ms="57933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCalculationScenario -->
+        <test-method signature="checkVirtualMachineClass()[pri:1, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:21:44 MSK" name="checkVirtualMachineClass" description="tests if estimation consider right virtual machine class" finished-at="2022-11-27T09:21:44 MSK" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkVirtualMachineClass -->
+        <test-method signature="checkRegion()[pri:3, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:21:44 MSK" name="checkRegion" description="tests if estimation consider right data center location" finished-at="2022-11-27T09:21:44 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkRegion -->
+        <test-method signature="checkLocalSsd()[pri:4, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:21:44 MSK" name="checkLocalSsd" description="tests if estimation consider right SSD capacity" finished-at="2022-11-27T09:21:44 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkLocalSsd -->
+        <test-method signature="checkInstanceType()[pri:2, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:21:44 MSK" name="checkInstanceType" description="tests if estimation consider right instance of machine" finished-at="2022-11-27T09:21:44 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkInstanceType -->
+        <test-method signature="checkTotalEstimatedMonthlyCostOnEquality()[pri:6, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:21:44 MSK" name="checkTotalEstimatedMonthlyCostOnEquality" description="sends estimation on email and test cost from email with cost from cloud calculator page" finished-at="2022-11-27T09:22:02 MSK" duration-ms="17504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTotalEstimatedMonthlyCostOnEquality -->
+        <test-method signature="checkCommitmentTerm()[pri:5, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:21:44 MSK" name="checkCommitmentTerm" description="tests if estimation consider right commitment term" finished-at="2022-11-27T09:21:44 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCommitmentTerm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.epam.test.GoogleCloudBothScenariosTest@19e4653c]" started-at="2022-11-27T09:22:02 MSK" name="tearDown" finished-at="2022-11-27T09:22:02 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.epam.test.GoogleCloudBothScenariosTest -->
+    </test> <!-- basic scenario -->
+  </suite> <!-- hardcore -->
+</testng-results>
