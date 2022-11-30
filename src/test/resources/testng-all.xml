@@ -3,7 +3,7 @@
 <suite name="all" verbose="1">
     <test name="all scenarios">
         <packages>
-            <package name="com.epam.test"/>
+            <package name="com.epam.test.*"/>
         </packages>
     </test>
 

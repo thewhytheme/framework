@@ -83,8 +83,9 @@ public class GoogleCloudPricingCalculatorAdvancedSettingsPage extends AbstractPa
         return this;
     }
 
-    public void estimate() {
+    public GoogleCloudEstimatedPage estimate() {
         estimateButton.click();
         log.info("Estimation is complete");
+        return new GoogleCloudEstimatedPage(driver);
     }
 }

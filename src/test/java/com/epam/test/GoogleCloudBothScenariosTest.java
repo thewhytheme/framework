@@ -12,11 +12,11 @@ public class GoogleCloudBothScenariosTest extends BaseTest {
     private GoogleCloudEstimatedPage estimatedPage;
     private String estimatedListData;
 
-    @BeforeClass(description = "opens cloud calculator page, fills the from with data from properties file and estimates price")
+    @BeforeClass(description = "opens cloud calculator page, fills the form with data from properties file and estimates price")
     public void createCalculationScenario() {
         webDriver.get("https://cloud.google.com/");
         GoogleCloudEnginePricingCalculator pricingCalculator = CLoudCalculatorCreator.withParametersFromProperties();
-        new GoogleCloudHomePage(webDriver)
+        estimatedPage =  new GoogleCloudHomePage(webDriver)
                 .searchForPricingCalculator()
                 .enterCalculatorPage()
                 .activeComputeEngineSection()
@@ -29,7 +29,6 @@ public class GoogleCloudBothScenariosTest extends BaseTest {
                 .setDataCenterLocation(pricingCalculator.getDataCenterLocation())
                 .setUsageTerm(pricingCalculator.getCommittedUsage())
                 .estimate();
-        estimatedPage = new GoogleCloudEstimatedPage(webDriver);
         estimatedListData = estimatedPage.findAndGetComputeEngineEstimationText();
     }
 
