@@ -19,13 +19,13 @@ public class GoogleCloudHomePage extends AbstractPage {
     }
 
     public GoogleCloudHomePage searchForPricingCalculator() {
-        getClickableElement(searchButton).click();
-        getClickableElement(searchBar).sendKeys("Google Cloud Platform Pricing Calculator");
+        getClickableElementEightSecondsWait(searchButton).click();
+        getClickableElementEightSecondsWait(searchBar).sendKeys("Google Cloud Platform Pricing Calculator");
         searchBar.submit();
         return this;
     }
     public GoogleCloudPricingCalculatorPage enterCalculatorPage() {
-        getClickableElement(linkToCalculator).click();
+        getClickableElementEightSecondsWait(linkToCalculator).click();
         return new GoogleCloudPricingCalculatorPage(driver);
     }
 }

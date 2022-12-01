@@ -12,11 +12,6 @@ public class Paste {
         this.paste = paste;
     }
 
-    public Paste(String name, String paste) {
-        this.name = name;
-        this.paste = paste;
-    }
-
     public Paste(String name, String paste, String highlighting, String expirationTime) {
         this.name = name;
         this.paste = paste;

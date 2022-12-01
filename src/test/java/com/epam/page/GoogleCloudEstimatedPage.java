@@ -35,7 +35,7 @@ public class GoogleCloudEstimatedPage extends AbstractPage {
     }
 
     public GoogleCloudEstimatedPage chooseEmailEstimateOption() {
-        getClickableElement(emailButton).click();
+        getClickableElementEightSecondsWait(emailButton).click();
         return this;
     }
 
@@ -56,7 +56,7 @@ public class GoogleCloudEstimatedPage extends AbstractPage {
 
     public GoogleCloudEstimatedPage sendEstimationOnEmail() {
         scrollFormToSendEmailButton();
-        new WebDriverWait(driver, Duration.ofSeconds(8))
+        new WebDriverWait(driver, Duration.ofSeconds(EIGHT_SECONDS_TIMEOUT))
                 .until(ExpectedConditions.visibilityOfElementLocated(By
                         .xpath("//button[@aria-label='Send Email']"))).click();
         logger.info("email with estimation was sent");

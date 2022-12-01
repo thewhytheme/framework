@@ -10,12 +10,12 @@ public class BaseTest {
     protected WebDriver webDriver;
     protected static final String PASTEBIN_URL = "https://pastebin.com/";
 
-    @BeforeTest
+    @BeforeClass
     public void setUp() {
         webDriver = DriverSingleton.getDriver();
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         DriverSingleton.closeDriver();
     }

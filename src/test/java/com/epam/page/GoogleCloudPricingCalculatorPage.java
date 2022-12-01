@@ -36,12 +36,12 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage {
     public GoogleCloudPricingCalculatorPage activeComputeEngineSection() {
         logger.info("Starting to filling up Cloud Form");
         switchToAFrame();
-        getClickableElement(computeEngineButton).click();
+        getClickableElementEightSecondsWait(computeEngineButton).click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorPage setNumberOfInstances(String numberOfInstances) {
-        getClickableElement(numberOfInstancesTextBox).click();
+        getClickableElementEightSecondsWait(numberOfInstancesTextBox).click();
         numberOfInstancesTextBox.sendKeys(numberOfInstances);
         return this;
     }
@@ -49,7 +49,7 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage {
     public GoogleCloudPricingCalculatorPage setSoftware(String software) {
         operationSystemDropBox.click();
         WebElement softwareElement = driver.findElement(By.xpath("//md-option/div[contains(text(),'" + software + "')]"));
-        getClickableElement(softwareElement).click();
+        getClickableElementEightSecondsWait(softwareElement).click();
         return this;
 
     }
@@ -60,17 +60,17 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage {
         switchToAFrame();
         virtualMachineDropBox.click();
         WebElement vmElement = driver.findElement(By.xpath("//md-option/div[contains(text(),'" + vmClass + "')]"));
-        getClickableElement(vmElement).click();
+        getClickableElementEightSecondsWait(vmElement).click();
         return this;
     }
 
     public GoogleCloudPricingCalculatorAdvancedSettingsPage setInstanceType(String machineSeries, String machineType) {
         machineSeriesDropBox.click();
         WebElement series = driver.findElement(By.xpath("//md-option/div[contains(text(),'" + machineSeries + "')]"));
-        getClickableElement(series).click();
+        getClickableElementEightSecondsWait(series).click();
         machineParamDropBox.click();
         WebElement type = driver.findElement(By.xpath("//md-option/div[contains(text(),'" + machineType + "')]"));
-        getClickableElement(type).click();
+        getClickableElementEightSecondsWait(type).click();
         return new GoogleCloudPricingCalculatorAdvancedSettingsPage(driver);
     }
 }

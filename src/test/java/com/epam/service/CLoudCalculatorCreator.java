@@ -15,17 +15,18 @@ public class CLoudCalculatorCreator {
     private static final String DATA_CLOUD_CALCULATOR_DATA_CENTER_LOCATION = "data.calculator.location";
     private static final String DATA_CLOUD_CALCULATOR_USAGE_TERM = "data.calculator.usage_term";
 
-    public static GoogleCloudEnginePricingCalculator withParametersFromProperties() {
-        return new GoogleCloudEnginePricingCalculator(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_NUMBER_OF_INSTANCES),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_SOFTWARE),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_PROVISIONING_MODULE),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_MACHINE_SERIES),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_MACHINE_TYPE),
-                Boolean.parseBoolean(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_GPU_STATUS)),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_GPU_NUMBER),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_GPU_TYPE),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_SSD_CAPACITY),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_DATA_CENTER_LOCATION),
-                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_USAGE_TERM));
+    public static GoogleCloudEnginePricingCalculator withAllParametersFromProperties() {
+        return new GoogleCloudEnginePricingCalculator.GoogleCloudEnginePricingCalculatorBuilder(
+                TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_NUMBER_OF_INSTANCES))
+                .setSoftware(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_SOFTWARE))
+                .setProvisioningModel(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_PROVISIONING_MODULE))
+                .setMachineSeries(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_MACHINE_SERIES))
+                .setMachineType(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_MACHINE_TYPE))
+                .setGPU_Needed(Boolean.parseBoolean(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_GPU_STATUS)))
+                .setNumberOfGPU(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_GPU_NUMBER))
+                .setTypeOfGPU(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_GPU_TYPE))
+                .setLocalSSD_Capacity(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_SSD_CAPACITY))
+                .setDataCenterLocation(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_DATA_CENTER_LOCATION))
+                .setCommittedUsage(TestDataConfigReader.getEnvironmentData(DATA_CLOUD_CALCULATOR_USAGE_TERM)).build();
     }
 }

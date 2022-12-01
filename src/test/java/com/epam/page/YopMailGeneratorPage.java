@@ -37,7 +37,7 @@ public class YopMailGeneratorPage extends AbstractPage {
         WebElement text = new WebDriverWait(driver, Duration.ofSeconds(FIVE_SECONDS_TIMEOUT))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='message']")));
         while ((text.getAttribute("innerText").contains("Этот почтовый ящик пуст")) || count < 2) {
-            getClickableElement(refreshButton).click();
+            getClickableElementEightSecondsWait(refreshButton).click();
             count++;
         }
         driver.switchTo().frame("ifmail");
@@ -49,7 +49,7 @@ public class YopMailGeneratorPage extends AbstractPage {
             new WebDriverWait(driver, Duration.ofSeconds(6))
                     .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By
                             .xpath("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]")));
-            getClickableElement(By
+            getClickableElementFiveSecondsWait(By
                     .xpath("//span[@class='recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox']")).click();
             logger.warn("reCaptcha was caught");
         } catch (org.openqa.selenium.NoSuchElementException | TimeoutException ignored) {

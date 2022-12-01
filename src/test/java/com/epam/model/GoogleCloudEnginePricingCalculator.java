@@ -3,122 +3,86 @@ package com.epam.model;
 import java.util.Objects;
 
 public class GoogleCloudEnginePricingCalculator {
-    private String numberOfInstances;
-    private String software;
-    private String provisioningModel;
-    private String machineSeries;
-    private String machineType;
-    private boolean isGPU_Needed;
-    private String numberOfGPU;
-    private String typeOfGPU;
-    private String localSSD_Capacity;
-    private String dataCenterLocation;
-    private String committedUsage;
+    private final String numberOfInstances;
+    private final String software;
+    private final String provisioningModel;
+    private final String machineSeries;
+    private final String machineType;
+    private final boolean isGPU_Needed;
+    private final String numberOfGPU;
+    private final String typeOfGPU;
+    private final String localSSD_Capacity;
+    private final String dataCenterLocation;
+    private final String committedUsage;
 
-    public GoogleCloudEnginePricingCalculator(String numberOfInstances, String software, String provisioningModel,
-                                              String machineSeries, String machineType, boolean isGPU_Needed,
-                                              String numberOfGPU, String typeOfGPU, String localSSD_Capacity,
-                                              String dataCenterLocation, String committedUsage) {
-        this.numberOfInstances = numberOfInstances;
-        this.software = software;
-        this.provisioningModel = provisioningModel;
-        this.machineSeries = machineSeries;
-        this.machineType = machineType;
-        this.isGPU_Needed = isGPU_Needed;
-        this.numberOfGPU = numberOfGPU;
-        this.typeOfGPU = typeOfGPU;
-        this.localSSD_Capacity = localSSD_Capacity;
-        this.dataCenterLocation = dataCenterLocation;
-        this.committedUsage = committedUsage;
+    public GoogleCloudEnginePricingCalculator(GoogleCloudEnginePricingCalculatorBuilder builder) {
+        this.numberOfInstances = builder.numberOfInstances;
+        this.software = builder.software;
+        this.provisioningModel = builder.provisioningModel;
+        this.machineSeries = builder.machineSeries;
+        this.machineType = builder.machineType;
+        this.isGPU_Needed = builder.isGPU_Needed;
+        this.numberOfGPU = builder.numberOfGPU;
+        this.typeOfGPU = builder.typeOfGPU;
+        this.localSSD_Capacity = builder.localSSD_Capacity;
+        this.dataCenterLocation = builder.dataCenterLocation;
+        this.committedUsage = builder.committedUsage;
     }
 
     public String getNumberOfInstances() {
         return numberOfInstances;
     }
 
-    public void setNumberOfInstances(String numberOfInstances) {
-        this.numberOfInstances = numberOfInstances;
-    }
 
     public String getSoftware() {
         return software;
     }
 
-    public void setSoftware(String software) {
-        this.software = software;
-    }
 
     public String getProvisioningModel() {
         return provisioningModel;
     }
 
-    public void setProvisioningModel(String provisioningModel) {
-        this.provisioningModel = provisioningModel;
-    }
 
     public String getMachineSeries() {
         return machineSeries;
     }
 
-    public void setMachineSeries(String machineSeries) {
-        this.machineSeries = machineSeries;
-    }
 
     public String getMachineType() {
         return machineType;
     }
 
-    public void setMachineType(String machineType) {
-        this.machineType = machineType;
-    }
 
     public boolean isGPU_Needed() {
         return isGPU_Needed;
     }
 
-    public void setGPU_Needed(boolean GPU_Needed) {
-        isGPU_Needed = GPU_Needed;
-    }
 
     public String getNumberOfGPU() {
         return numberOfGPU;
     }
 
-    public void setNumberOfGPU(String numberOfGPU) {
-        this.numberOfGPU = numberOfGPU;
-    }
 
     public String getTypeOfGPU() {
         return typeOfGPU;
     }
 
-    public void setTypeOfGPU(String typeOfGPU) {
-        this.typeOfGPU = typeOfGPU;
-    }
 
     public String getLocalSSD_Capacity() {
         return localSSD_Capacity;
     }
 
-    public void setLocalSSD_Capacity(String localSSD_Capacity) {
-        this.localSSD_Capacity = localSSD_Capacity;
-    }
 
     public String getDataCenterLocation() {
         return dataCenterLocation;
     }
 
-    public void setDataCenterLocation(String dataCenterLocation) {
-        this.dataCenterLocation = dataCenterLocation;
-    }
 
     public String getCommittedUsage() {
         return committedUsage;
     }
 
-    public void setCommittedUsage(String committedUsage) {
-        this.committedUsage = committedUsage;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -140,7 +104,6 @@ public class GoogleCloudEnginePricingCalculator {
                 localSSD_Capacity, dataCenterLocation, committedUsage);
     }
 
-
     @Override
     public String toString() {
         return "GoogleCloudEnginePricingCalculator{" +
@@ -156,5 +119,77 @@ public class GoogleCloudEnginePricingCalculator {
                 ", dataCenterLocation='" + dataCenterLocation + '\'' +
                 ", committedUsage='" + committedUsage + '\'' +
                 '}';
+    }
+
+    public static class GoogleCloudEnginePricingCalculatorBuilder {
+        private String numberOfInstances;
+        private String software;
+        private String provisioningModel;
+        private String machineSeries;
+        private String machineType;
+        private boolean isGPU_Needed;
+        private String numberOfGPU;
+        private String typeOfGPU;
+        private String localSSD_Capacity;
+        private String dataCenterLocation;
+        private String committedUsage;
+
+        public GoogleCloudEnginePricingCalculatorBuilder(String numberOfInstances) {
+            this.numberOfInstances = numberOfInstances;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setSoftware(String software) {
+            this.software = software;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setProvisioningModel(String provisioningModel) {
+            this.provisioningModel = provisioningModel;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setMachineSeries(String machineSeries) {
+            this.machineSeries = machineSeries;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setMachineType(String machineType) {
+            this.machineType = machineType;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setGPU_Needed(boolean GPU_Needed) {
+            isGPU_Needed = GPU_Needed;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setNumberOfGPU(String numberOfGPU) {
+            this.numberOfGPU = numberOfGPU;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setTypeOfGPU(String typeOfGPU) {
+            this.typeOfGPU = typeOfGPU;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setLocalSSD_Capacity(String localSSD_Capacity) {
+            this.localSSD_Capacity = localSSD_Capacity;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setDataCenterLocation(String dataCenterLocation) {
+            this.dataCenterLocation = dataCenterLocation;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculatorBuilder setCommittedUsage(String committedUsage) {
+            this.committedUsage = committedUsage;
+            return this;
+        }
+
+        public GoogleCloudEnginePricingCalculator build() {
+            return new GoogleCloudEnginePricingCalculator(this);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class GoogleCloudBothScenariosTest extends BaseTest {
     @BeforeClass(description = "opens cloud calculator page, fills the form with data from properties file and estimates price")
     public void createCalculationScenario() {
         webDriver.get("https://cloud.google.com/");
-        GoogleCloudEnginePricingCalculator pricingCalculator = CLoudCalculatorCreator.withParametersFromProperties();
+        GoogleCloudEnginePricingCalculator pricingCalculator = CLoudCalculatorCreator.withAllParametersFromProperties();
         estimatedPage =  new GoogleCloudHomePage(webDriver)
                 .searchForPricingCalculator()
                 .enterCalculatorPage()
@@ -68,7 +68,7 @@ public class GoogleCloudBothScenariosTest extends BaseTest {
                 .sendEstimationOnEmail()
                 .getEstimationSumFromEmail();
         Assert.assertEquals(estimationFromPage.contains(monthFee), estimationFromEmail.contains(monthFee),
-                "cost is not matching");
+                "cost from email does not match cost from calculator page");
 
     }
 

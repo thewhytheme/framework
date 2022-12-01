@@ -39,8 +39,8 @@ public class PasteBinHomePage extends AbstractPage {
 
     public PasteBinHomePage setPasteExpiration(String expirationTime) {
         String buttonXpath = "//li[text()='" + expirationTime + "']";
-        getClickableElement(By.id("select2-postform-expiration-container")).click();
-        getClickableElement(By.xpath(buttonXpath)).click();
+        getClickableElementFiveSecondsWait(By.id("select2-postform-expiration-container")).click();
+        getClickableElementFiveSecondsWait(By.xpath(buttonXpath)).click();
         return this;
     }
 
@@ -65,13 +65,13 @@ public class PasteBinHomePage extends AbstractPage {
     public PasteBinHomePage setFormatHighlighter(String formatHighlighter) {
 
         String highlighterXpath = "//ul/li[text()='" + formatHighlighter + "']";
-        getClickableElement(By.id("select2-postform-format-container")).click();
+        getClickableElementFiveSecondsWait(By.id("select2-postform-format-container")).click();
         driver.findElement(By.xpath(highlighterXpath)).click();
         return this;
     }
 
 
     public String retrievePasteNameFromInfoTop() {
-        return getClickableElement(By.xpath("//div[@class='info-top']")).getAttribute("innerText");
+        return getClickableElementFiveSecondsWait(By.xpath("//div[@class='info-top']")).getAttribute("innerText");
     }
 }
